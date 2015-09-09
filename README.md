@@ -1,1 +1,1 @@
-Module for plotting NWS surface meteorology provided by [Mesowest](http://mesowest.utah.edu/)
+Module for plotting NWS surface meteorology provided by <a href="http://mesowest.utah.edu/" target="_blank">Mesowest</a>
