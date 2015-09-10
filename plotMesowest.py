@@ -16,13 +16,10 @@ mesofiles=[ '/home/rvalenzuela/SURFACE/case03/KAPC_Napa_County_Airport.xls',
 
 st = datetime.datetime(2001, 1, 23, 0, 0)
 en = datetime.datetime(2001, 1, 25, 0, 0)
-
-
-fig,ax = plt.subplots(3,1,figsize=(13,10),sharex=True)
 var=['TMP','RELH','DRCT']
-datefmt = dates.DateFormatter('%H\n%d')
 hl=[]
 xticks = pd.date_range(start=st,end=en, freq='3H')
+fig,ax = plt.subplots(3,1,figsize=(13,10),sharex=True)
 for i,f in enumerate(mesofiles):
 	df=mf.parse_mesowest_excel(f)
 	df2=df[st:en]
@@ -42,6 +39,7 @@ ax[1].set_ylim([40,105])
 ax[1].set_ylabel('Relative humidity [%]')
 ax[2].set_yticks(range(0,360+60,60))
 ax[2].set_ylabel('Wind direction [deg]')
+datefmt = dates.DateFormatter('%H\n%d')
 ax[2].xaxis.set_major_formatter(datefmt)
 ax[2].set_xlabel(r'$\Leftarrow$'+' Time [UTC]')
 t1='NWS surface observations (source: Mesowest)'
